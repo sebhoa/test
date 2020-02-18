@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Positionnement CSS</title>
+	<link rel="stylesheet" href="general.css" />
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="global">
+	<h1>Les diverses techniques de positionnement en CSS (part II)</h1>
+
+	<h2>La propriété <code>display</code></h2>
+
+	<p>Cette propriété possède diverses valeurs (voir <a href="http://www.w3schools.com/cssref/pr_class_display.asp">w3schools</a>). Mais 4 sont particulièrement utilisées :</p>
+
+	<ul>
+		<li>inline-block</li>
+		<li>none et block</li>
+		<li>flex</li>
+	</ul>
+
+	<section id="inline_block">
+		<h3>#01 <code>display: inline-block</code></h3>
+		<p>S'utilise sur un élément de type <em>inline</em> pour hériter des propriétés réservées aux éléments de type <em>block</em> notamment tout ce qui touche au dimensionnement.</p>
+		<p>Exemple courant : faire un bouton</p>
+
+		<p>Ci-dessous, on voit que l'élément <code>li</code> prend tout la largeur disponible, mais pas le <code>a</code>.</p>
+
+		<nav id="ex_01">
+			<ul>
+				<li><a href="#">Lien 1</a></li>
+				<li><a href="#">Lien 2</a></li>
+			</ul>
+		</nav>
+
+		<p>On peut transformer un peu l'élément <code>li</code> pour qu'il ressemble plus à un bouton. Néanmoins on ne peut pas cliquer sur ce <em>bouton</em> et le lien n'est que sur le texte (entouré en rouge) :</p>
+
+
+		<nav id="ex_02">
+			<ul>
+				<li><a href="#">Lien 1</a></li>
+				<li><a href="#">Lien 2</a></li>
+			</ul>
+		</nav>
+		
+		<p>Grâce à la propriété <code>display: inline-block</code> appliquée à l'élément <code>a</code>, on peut étirer ce dernier pour qu'il couvre tout le <em>bouton</em> :</p>
+
+
+		<nav id="ex_03">
+			<ul>
+				<li><a href="#">Lien 1</a></li>
+				<li><a href="#">Lien 2</a></li>
+			</ul>
+		</nav>
+	</section>
+
+
+	<section id="none_et_block">
+		<h3>#02 <code>display: none</code> et <code>display: block</code></h3>
+
+		<p>La valeur <code>none</code> permet de ne tout simplement pas afficher l'élément du tout. Alors que la valeur <code>block</code> permettra de l'afficher comme un élément de type <em>block</em>. On se sert de ce couple pour faire des menus déroulants. Les menus sont toujours organisés dans des listes (numérotées ou non cela n'a pas d'importance) elles mêmes encapsulées dans un élément <code>nav</code>.</p>
+
+		<nav>
+			<ul>
+				<li><a href="#">Catégorie 0</a></li>
+				<li>Catégorie I
+					<ul>
+						<li><a href="#">Lien I.1</a></li>
+						<li><a href="#">Lien I.2</a></li>
+					</ul>
+				</li>
+				<li>Catégorie II
+					<ul>
+						<li><a href="#">Lien II.1</a></li>
+						<li><a href="#">Lien II.2</a></li>
+						<li><a href="#">Lien II.3</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+
+
+		<p>Ci-dessous le menu n'est pas totalement affiché : les sous-rubriques sont masquées et n'apparaissent qu'au survol. Attention à l'ergonomie, on voit ici que le déroulé d'un menu bouge l'ensemble de la page et nuit à l'ergonomie.</p>
+
+		<nav id="deroulant_1">
+			<ul>
+				<li><a href="#">Catégorie 0</a></li>
+				<li>Catégorie I
+					<ul>
+						<li><a href="#">Lien I.1</a></li>
+						<li><a href="#">Lien I.2</a></li>
+					</ul>
+				</li>
+				<li>Catégorie II
+					<ul>
+						<li><a href="#">Lien II.1</a></li>
+						<li><a href="#">Lien II.2</a></li>
+						<li><a href="#">Lien II.3</a></li>
+					</ul>
+				</li>
+
+			</ul>
+		</nav>
+
+		<p>Ainsi, pour un menu déroulant il est préférable, d'afficher le menu de premier niveau en ligne. Et de travailler avec un positionnement absolu pour que le déploiement du sous menu ne vienne pas perturber l'ensemble de la page. La mise en ligne des éléments <code>li</code> se faisait avec un <code>display: inline-block</code>. J'ai repris ici cette technique. Toutefois, maintenant on utilisera plutôt la valeur <code>flex</code> que nous verrons plus tard.</p>
+
+		<nav id="deroulant_2">
+			<ul>
+				<li><a href="#">Catégorie 0</a></li>
+				<li>Catégorie I
+					<ul>
+						<li><a href="#">Lien I.1</a></li>
+						<li><a href="#">Lien I.2</a></li>
+					</ul>
+				</li>
+				<li>Catégorie II
+					<ul>
+						<li><a href="#">Lien II.1</a></li>
+						<li><a href="#">Lien II.2</a></li>
+						<li><a href="#">Lien II.3</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</section>
+
+	<h3>#03 <code>display: flex</code></h3>
+	<p>Il s'agit de la toute dernière nouveauté CSS3 pour la mise en page. A utiliser pour placer les éléments comme on le souhaite. Fera l'objet d'un exemple à part entière.</p>
+</div>
+</body>
+</html>

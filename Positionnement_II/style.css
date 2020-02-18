@@ -1,0 +1,103 @@
+
+/* --
+	-- Exemple sur inline-block 
+	--										*/
+
+#inline_block ul {
+	list-style: none; 
+}
+
+#inline_block a {
+	border: 1px solid red;
+}
+
+#ex_01 li {
+	border: 1px solid black;
+	background-color: rgb(180,180,180);
+	margin: 3px 0;
+}
+
+#ex_02 li {
+	border-radius: 5px;
+	width: 80px;
+	border: 1px solid black;
+	background-color: rgb(180,180,180);
+	margin: 4px 2px;
+}
+
+#ex_03 li {
+	border-radius: 5px;
+	width: 80px;
+	border: 1px solid black;
+	background-color: rgb(180,180,180);
+	margin: 4px 2px;
+}
+
+#ex_03 a {
+	border-radius: 5px;	/* pour que la boite 'a' ne déborde pas sur les coins : on a mis le même arrondi que le li */
+	border: 1px solid red;
+	display: inline-block; /* pour pouvoir changer la largeur du 'a' */
+	width: 100%;
+}
+
+
+/* --
+	-- Exemple du none et block, le menu déroulant 
+	--																*/
+
+
+/* on masque la liste de 2e niveau ie celle qui se trouve dans un ul */
+
+#deroulant_1 ul ul {
+	display: none;
+}
+
+#deroulant_1 li {
+	width: 80px;
+	border: 1px solid black;
+}
+
+#deroulant_1 li li {
+	width: 100%;
+	border: none;
+}
+
+#deroulant_1 li:hover ul {
+	display: block;
+	list-style: none;
+	padding: 0;
+}
+
+/* ------------ */
+
+#deroulant_2 ul ul {
+	/* faire disparaitre les sous menus */
+	display: none;
+
+	/* le design du sous menu : */;
+	width: 100px;
+	background-color: rgb(220,220,220);
+	list-style: none;
+	padding: 0;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+#deroulant_2 > ul > li {
+	display: inline-block;
+	width: 100px;
+	border: 1px solid black;
+	position: relative;
+}
+
+#deroulant_2 li li {
+	width: 100%;
+}
+
+/* Faire apparaître le sous menu eu survol du li */
+#deroulant_2 li:hover ul {
+	display: block;
+	position: absolute;
+	left: -1px;
+}
